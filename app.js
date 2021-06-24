@@ -5,7 +5,8 @@ const {Client, Config, CheckoutAPI} = require('@adyen/api-library');
 const uuid = require('uuid');
 // localhost 8080
 const port = 80;
-const appUrl= "http://murmuring-meadow-96083.herokuapp.com/";
+const appUrl = "http://murmuring-meadow-96083.herokuapp.com/";
+const localhost = 'localhost'; 
 const app = express();
 
 // layout structure using handlebars
@@ -81,8 +82,8 @@ app.all('/payments/redirect', (req, res) => {
 // To-do not implemented
 });
 
-app.listen(port,appUrl, () => {
+app.listen(port,localhost, () => {
   // console.log(`Listening at http://localhost:${port}`)
-  console.log('Listening at '+ appUrl)
+  console.log('Listening at ' + localhost)
 });
 
