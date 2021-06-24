@@ -55,7 +55,7 @@ app.post('/payments', (req, res) => {
   checkout.payments({
     merchantAccount: config.merchantAccount,
     paymentMethod: req.body.paymentMethod,
-    amount: {currency: "USD", value: 1000},
+    amount: {currency: "USD", value: 10000},
     channel: "Web",
     additionalData: {allow3DS2: true},
     browserInfo: req.body.browserInfo,
