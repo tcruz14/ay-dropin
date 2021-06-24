@@ -3,7 +3,9 @@ const path = require("path");
 const handlebars = require("express-handlebars");
 const {Client, Config, CheckoutAPI} = require('@adyen/api-library');
 const uuid = require('uuid');
-const port = 8080;
+// localhost 8080
+const port = 80;
+const appUrl= "http://murmuring-meadow-96083.herokuapp.com/";
 const app = express();
 
 // layout structure using handlebars
@@ -58,7 +60,8 @@ app.post('/payments', (req, res) => {
     additionalData: {allow3DS2: true},
     browserInfo: req.body.browserInfo,
     reference: uid,
-    returnUrl: "http://localhost:8080/payments/redirect?orderRef=" + uid
+    //returnUrl: "http://localhost:8080/payments/redirect?orderRef=" + uid
+    returnUrl: appUrl + "/payments/redirect?orderRef=" + uid
   })
   .catch(err => console.error(err))
   // sends result of payment to client 
@@ -78,7 +81,8 @@ app.all('/payments/redirect', (req, res) => {
 // To-do not implemented
 });
 
-app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`)
+app.listen(port,appUrl, () => {
+  // console.log(`Listening at http://localhost:${port}`)
+  console.log('Listening at '+ appUrl)
 });
 
