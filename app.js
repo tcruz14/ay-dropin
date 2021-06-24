@@ -4,9 +4,8 @@ const handlebars = require("express-handlebars");
 const {Client, Config, CheckoutAPI} = require('@adyen/api-library');
 const uuid = require('uuid');
 // localhost 8080
-const port = 80;
-const appUrl = "http://murmuring-meadow-96083.herokuapp.com/";
-const localhost = 'localhost'; 
+// const port = 8080;
+const appUrl = "https://murmuring-meadow-96083.herokuapp.com/";
 const app = express();
 
 // layout structure using handlebars
