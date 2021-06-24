@@ -82,8 +82,8 @@ app.all('/payments/redirect', (req, res) => {
 // To-do not implemented
 });
 
-app.listen(port,localhost, () => {
+app.listen(process.env.PORT, () => {
   // console.log(`Listening at http://localhost:${port}`)
-  console.log('Listening at ' + localhost)
+  console.log('Listening at ' + process.env.PORT)
 });
 
